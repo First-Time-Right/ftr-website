@@ -2,10 +2,7 @@
     font-family: Roboto;
     src: url(../fonts/roboto.woff2);
 }
-
-
 :root{
-
     /* General colors */
     --almost-white:#FAFAFA;
     --almost-black:#121212;
@@ -13,17 +10,9 @@
 
 
     /* General components */
-    /*--quote-color-dark-bg: var(--almost-white);*/
 
-    /*--h1-dark-bg: var(--almost-white);*/
     --h1-dark-bg-underline: linear-gradient(to right, rgba(250, 250, 250, .4), rgba(250, 250, 250, .2), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
     --h1-light-bg-underline: linear-gradient(to right, var(--almost-black), rgba(0, 0, 0, .5), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
-
-    /*--h2-dark-bg: var(--almost-white);*/
-    /*--h2-light-bg: var(--almost-black);*/
-
-    /*--h3-dark-bg: var(--almost-white);*/
-
 
     /*Nav bar*/
     --nav-bar-text-color: #652D2D;
@@ -48,41 +37,70 @@
     --footer-bg-color: #005005;
     --footer-text-color: #AFAFAF;
 
+
+
+    /*  Defaults  */
+    font-family: Oxanium, Roboto, sans-serif;
+    font-weight: normal;
+
+
 }
 
-/*TODO fonts*/
+/* Theming */
+.light-bg {
+    --h1-underline: linear-gradient(to right, var(--almost-black), rgba(0, 0, 0, .5), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+    --h1-color: var(--almost-black);
+    --h2-color: var(--almost-black);
 
+    --quote-color: var(--almost-black);
+
+
+    color: var(--almost-black);
+}
+
+.dark-bg {
+    --h1-underline: linear-gradient(to right, rgba(250, 250, 250, .4), rgba(250, 250, 250, .2), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+    --h1-color: var(--almost-white);
+    --h2-color: var(--almost-white);
+
+    --quote-color: var(--almost-white);
+
+
+    color: var(--almost-white);
+
+}
+
+
+
+/* Headers */
 h1{
-    font-family: Oxanium, cursive;
     border-bottom: solid 1px;
     font-weight: normal;
     font-size: 2em;
 
-    border-image: var(--h1-dark-bg-underline) 1 0;
-    color: var(--almost-white);
-    }
-/* Headers */
-h1 and .light-bg{
-    border-image: var(--h1-light-bg-underline) 1 0;
-    color: var(--almost-black);
+    border-image: var(--h1-underline) 1 0;
+    color: var(--h1-color);
 }
+
+h2{
+    font-weight: normal;
+    color: var(--h2-color);
+    font-size: 1.5em;
+    margin-bottom: 0;
+}
+
 
 /* Quotes*/
 .quote{
     font-size: 2em;
     font-style: italic;
-
     font-family: Roboto, sans-serif;
     font-weight: 200;
     line-height: 75px;
     display: flex;
-    align-items: center;
+    justify-content: center;
     text-align: center;
-
-    color: #FAFAFA;
-
-
-
+    color: var(--quote-color);
 }
 
 
@@ -92,16 +110,25 @@ h1 and .light-bg{
 }
 
 /* Sections */
-/*todo header size stuff*/
 /* Order so it is displayed at the bottom, but still keeping the accessibility as if it were at the top. */
 #header {
-    display: flex;
     order: 10;
     position: sticky;
     bottom: 0;
     background: var(--almost-white);
     height: var(--nav-bar-height);
-    flex-wrap: wrap;
+    /*flex-wrap: wrap;*/
+}
+#header>nav{
+    display: flex;
+    height: 100%;
+
+}
+.nav-img-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
 }
 
 
@@ -124,29 +151,33 @@ h1 and .light-bg{
     max-width: 600px;
 }
 .logo-small{
-    max-height: 80%;
+    height: 48px;
+    width: 48px;
 }
 #quote-area{
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     justify-content: center;
+    align-content: center;
+}
+/* Apply padding to all but the :before*/
+#quote-area :not(:first-child) {
+    padding: 16px;
 }
 /*
     ::before displays the white indenting triangle. This is made up out of the corners of borders. background is used for the color.
     border-top determines the height. Using a vw value makes sure the angle of the triangle is static.
     border-left and right are the blue triangles. Using width 50vw for both ensures that they take up the full
-    width of the screen.
+    width of the screen. Height and margin-top fix a bug where there were white or blue lines showing at the top or bottom.
 */
 #quote-area::before{
-    display: block;
     content: '';
-    width: 0;
-    top: 0;
-    border-top: 15vw solid transparent;
+    border-top: 15vw solid var(--almost-white);
     border-left: 50vw solid var(--ftr-blue);
     border-right: 50vw solid var(--ftr-blue);
-    background: var(--almost-white);
+    margin-top: -1px;
+    height: 5px;
 }
 
 #what-we-do {
@@ -161,9 +192,51 @@ h1 and .light-bg{
     background-color: var(--cost-transparity-bg-color);
 }
 
+.cost-box{
+    background: var(--cost-transparity-scheme-bg-color);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    padding:  0 16px;
+    margin-bottom: 16px;
+}
+.cost-box>ul{
+    padding-left: 16px;
+}
+.cost-box-header{
+    border: 0;
+    padding-bottom: 16px;
+    margin-bottom: 0;
+    border-bottom: 6px;
+    border-style: solid;
+    border-color: var(--cost-transparity-scheme-divider-color);
+    text-align: center;
+}
+
 #contact-us {
+    display: flex;
+    flex-direction: column;
     background-color: var(--contact-us-bg-color);
 }
+
+.contact-row {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+
+    padding: 8px;
+
+}
+
+.contact-row > a {
+    margin-left: 16px;
+    text-decoration: none;
+    color: currentColor;
+}
+
+
 
 .footer{
     color: var(--footer-text-color);
@@ -178,28 +251,40 @@ h1 and .light-bg{
 }
 
 
-
-
-/* additions */
-.light-bg {
-    color: var(--almost-black);
-}
-
-.dark-bg {
-    color: var(--almost-white);
-}
-
-
-
-
-
 /* general css */
 
 .section{
-    padding: 8px;
+    padding: 16px;
     box-sizing: border-box;
+}
+
+.content-grid {
+    flex-direction: column;
+    border-radius: 20px;
+    background: var(--almost-white);
+    overflow: hidden;
+    padding-bottom: -20px;
+}
+.content-item-text{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    padding: 16px;
 
 }
+.content-item-image{
+    max-width: 100%;
+    background: #652D2D;
+    flex-grow: 1;
+}
+.arrow-down{
+    height: 36px;
+}
+
+.text-center{
+    text-align: center;
+}
+
 
 html{
     scroll-behavior:smooth
