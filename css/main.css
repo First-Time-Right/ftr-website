@@ -96,9 +96,7 @@ h2{
     font-style: italic;
     font-family: Roboto, sans-serif;
     font-weight: 200;
-    line-height: 75px;
-    display: flex;
-    justify-content: center;
+    line-height: 48px;
     text-align: center;
     color: var(--quote-color);
 }
@@ -130,6 +128,10 @@ h2{
     align-items: center;
     flex-grow: 1;
 }
+.logo-small{
+    height: 48px;
+    width: 48px;
+}
 
 
 #splash{
@@ -138,32 +140,24 @@ h2{
     display: flex;
     flex-direction: column;
 }
+
 #logo-area {
     display: flex;
     justify-content: center;
     background-color: var(--almost-white);
-    width: 100%;
     padding-top: 16px;
-
 }
 .logo-full{
     width: 80vw;
     max-width: 600px;
 }
-.logo-small{
-    height: 48px;
-    width: 48px;
-}
-#quote-area{
+
+.quote-area{
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     justify-content: center;
     align-content: center;
-}
-/* Apply padding to all but the :before*/
-#quote-area :not(:first-child) {
-    padding: 16px;
 }
 /*
     ::before displays the white indenting triangle. This is made up out of the corners of borders. background is used for the color.
@@ -179,6 +173,66 @@ h2{
     margin-top: -1px;
     height: 5px;
 }
+.quote-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    -webkit-transform: translateY(10%);
+    -moz-transform: translateY(10%);
+}
+
+
+@media (min-width: 768px) {
+    #splash {
+        flex-direction: row-reverse;
+        display: flex;
+    }
+    .quote-area{
+        display: block;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        width: 60%;
+    }
+
+
+    .quote-area::before{
+        content: '';
+
+        border-top: 0 solid red;
+        border-right: 0 solid green;
+        border-left: 130px solid var(--ftr-blue);
+        border-bottom: calc(100vh - var(--nav-bar-height)) solid var(--almost-white);
+        float: right;
+        background: white;
+        margin-right: -1px;
+    }
+    /* Apply padding to all but the :before*/
+    #logo-area:first-child {
+        padding: 0;
+    }
+    #logo-area {
+        width: 40%;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .logo-full{
+        max-width: 90%;
+        height: auto;
+        margin-left: -30px;
+        z-index: 0;
+    }
+
+    .quote {
+        font-size: 3em;
+    }
+}
+
+
 
 #what-we-do {
     background-color: grey;
@@ -293,6 +347,8 @@ body{
     display: flex;
     flex-direction: column;
     margin: 0;
+    overflow-x:hidden;
+
 }
 .flex-grow{
     flex-grow: 1;
