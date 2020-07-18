@@ -16,7 +16,7 @@
 </head>
 
 <body>
-
+<span id="home"></span>
 <header id="header">
     <nav>
         <a class="nav-img-button" href="#what-we-do" data-text="What we do">
@@ -25,7 +25,7 @@
         <a class="nav-img-button" href="#our-approach" data-text="Our Approach">
             <img class="nav-icon" src="img/work-24px.svg" alt="Our Approach">
         </a>
-        <a class="nav-home-button" href="#splash" data-text="Home">
+        <a class="nav-home-button" href="#home" data-text="Home">
             <img class="logo-small" src="img/ftr-logo.png" alt="Home">
         </a>
         <a class="nav-img-button" href="#cost-transparency" data-text="Cost Transparency">
@@ -44,17 +44,13 @@
     </div>
 
     <div class="quote-area dark-bg">
-<!--        <span class="flex-grow"></span>-->
         <div class="quote-container">
             <span class="quote">“Great People make Great Organizations”</span>
-            <p>
+            <p class="quote-text-under">
                 FTR excels by its pragmatic, solution focused approach, clear and no-nonsense communication and our
                 engaging, empathic and respectful approach.
             </p>
         </div>
-
-<!--        <span class="flex-grow"></span>-->
-
     </div>
 
 
@@ -120,7 +116,9 @@
                 morbi faucibus.
             </p>
         </div>
-        <img class="content-item-image" src="img/placeholder.jpg"/>
+        <div class="content-item-image-wrapper" style="--img-src:url('../img/placeholder.jpg')">
+            <img class="content-item-image" src="img/placeholder.jpg" />
+        </div>
         <div class="content-item-text">
             <h2 class="text-center">Intake</h2>
             <p>
@@ -145,7 +143,7 @@
                 morbi faucibus.
             </p>
         </div>
-        <img class="content-item-image" src="img/placeholder.jpg"/>
+        <img class="content-item-image-wrapper" src="img/placeholder.jpg"/>
 
     </div>
 
