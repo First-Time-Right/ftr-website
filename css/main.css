@@ -44,7 +44,6 @@
     font-family: Oxanium, Roboto, sans-serif;
     font-weight: normal;
 
-
 }
 
 /* Theming */
@@ -106,7 +105,6 @@ h2{
     font-family: Roboto, sans-serif;
     font-style: normal;
     font-weight: 300;
-    font-size: 1.2em;
     line-height: 28px;
     display: flex;
     align-items: center;
@@ -336,9 +334,51 @@ body{
 }
 
 
+@media (orientation : landscape) {
+    #splash {
+        flex-direction: row-reverse;
+        display: flex;
+    }
+    .quote-container {
+        justify-content: center;
+    }
+    .quote-area{
+        display: block;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        width: 70%;
+        box-sizing: border-box;
+    }
+    .quote-area::before{
+        content: '';
 
+        border-top: 0 transparent;
+        border-right: 0 transparent;
+        border-left: 130px solid var(--ftr-blue);
+        border-bottom: calc(100vh - var(--nav-bar-height)) solid var(--almost-white);
+        float: right;
+        background: white;
+        margin-right: -5px;
+    }
 
-
+    /* Apply padding to all but the :before*/
+    #logo-area:first-child {
+        padding: 0;
+    }
+    #logo-area {
+        width: 30%;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .logo-full{
+        max-width: 100%;
+        height: auto;
+        margin-left: -40px;
+        z-index: 0;
+    }
+}
 
 
 
@@ -380,62 +420,20 @@ body{
         box-shadow: var(--nav-bar-desktop-shadow);
     }
 
+    .quote {
+        font-size: 2em;
+    }
 
-    #splash {
-        flex-direction: row-reverse;
-        display: flex;
-    }
-    .quote-container {
-        justify-content: center;
-    }
     .quote-area{
-        display: block;
-        flex-direction: row;
-        justify-content: center;
-        align-content: center;
-        width: 60%;
-        box-sizing: border-box;
-    }
-    .quote-area::before{
-        content: '';
-
-        border-top: 0 transparent;
-        border-right: 0 transparent;
-        border-left: 130px solid var(--ftr-blue);
-        border-bottom: calc(100vh - var(--nav-bar-height)) solid var(--almost-white);
-        float: right;
-        background: white;
-        margin-right: -5px;
-    }
-
-
-
-    /* Apply padding to all but the :before*/
-    #logo-area:first-child {
-        padding: 0;
+        width: 60%
     }
     #logo-area {
         width: 40%;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
-    .logo-full{
-        max-width: 100%;
-        height: auto;
-        margin-left: -3vw;
-
-        z-index: 0;
-    }
-
-    .quote {
-        font-size: 3em;
     }
 
     .quote-text-under{
         padding-left: 5%;
     }
-
 
     .content-grid{
         flex-direction: row;
@@ -477,7 +475,7 @@ body{
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1200px )  {
     .quote {
         font-size: 4em;
     }
