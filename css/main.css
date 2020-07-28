@@ -1,7 +1,3 @@
-@font-face {
-    font-family: Roboto;
-    src: url(../fonts/roboto.woff2);
-}
 :root{
     /* General colors */
     --almost-white:#FAFAFA;
@@ -10,7 +6,6 @@
 
 
     /* General components */
-
     --h1-dark-bg-underline: linear-gradient(to right, rgba(250, 250, 250, .4), rgba(250, 250, 250, .2), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
     --h1-light-bg-underline: linear-gradient(to right, var(--almost-black), rgba(0, 0, 0, .5), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
 
@@ -24,26 +19,25 @@
     --quote-area-bg-color: var(--ftr-blue);
     --logo-area-bg-color: var(--almost-white);
 
+    /*Our Approach*/
     --our-approach-bg-color: #486BB4;
     --our-approach-text-block-bg: var(--almost-white);
 
+    /*Cost Transparency*/
+    --cost-transparency-bg-color:#1565C0;
+    --cost-transparency-scheme-bg-color:#003473;
+    --cost-transparency-scheme-divider-color: #00295A;
 
-    --cost-transparity-bg-color:#1565C0;
-    --cost-transparity-scheme-bg-color:#003473;
-    --cost-transparity-scheme-divider-color: #00295A;
-
+    /*Contact Us*/
     --contact-us-bg-color: #2E7C31;
 
-
+    /*Footer*/
     --footer-bg-color: #005005;
     --footer-text-color: #AFAFAF;
-
-
 
     /*  Defaults  */
     font-family: Oxanium, Roboto, sans-serif;
     font-weight: normal;
-
 }
 
 /* Theming */
@@ -53,7 +47,6 @@
     --h2-color: var(--almost-black);
 
     --quote-color: var(--almost-black);
-
 
     color: var(--almost-black);
 }
@@ -65,16 +58,79 @@
 
     --quote-color: var(--almost-white);
 
-
     color: var(--almost-white);
 
 }
 
+/* general css */
+html{
+    scroll-behavior:smooth
+}
+body{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    overflow-x:hidden;
+
+}
+.desktop-only{
+    display: none;
+}
+.section{
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+.content-grid {
+    flex-direction: column;
+    border-radius: 20px;
+    background: var(--almost-white);
+    overflow: hidden;
+    padding-bottom: -20px;
+}
+.content-item-text{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    justify-content: space-evenly;
+    padding: 16px;
+    box-sizing: border-box;
+}
+.content-item-image-wrapper{
+    max-width: 100%;
+    flex-grow: 1;
+    box-sizing: border-box;
+    object-fit: contain;
+    align-items: center;
+    display: flex;
+    background: lightgray;
+    position: relative;
+}
+.content-item-image {
+    max-width: 100%;
+    flex-grow: 1;
+    object-fit: contain;
+
+    /*min-height: 100px;*/
+}
+
+.text-center{
+    text-align: center;
+}
+
+.flex-grow{
+    flex-grow: 1;
+}
 
 
-/* Headers */
+
+
+
+
+
+/* Typography */
 h1{
-    border-bottom: solid 1px;
+    border-bottom: solid 2px;
     font-weight: normal;
     font-size: 2em;
 
@@ -89,14 +145,12 @@ h2{
     margin-bottom: 0;
 }
 
-
-/* Quotes*/
 .quote{
     font-size: 2em;
     font-style: italic;
     font-family: Roboto, sans-serif;
     font-weight: 200;
-    line-height: 75px;
+    line-height: 1.5em;
     text-align: center;
     color: var(--quote-color);
 }
@@ -111,9 +165,6 @@ h2{
     text-align: justify;
     color: #BBBBBB;
 }
-
-
-/* Paragraphs */
 .p{
     font-size: 1em;
 }
@@ -136,13 +187,24 @@ h2{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-grow: 1;
+    /*100 divided by the amount of nav items*/
+    flex-basis: calc(100% / 5);
+    flex-direction: column;
+    text-decoration: none;
+    color: var(--nav-bar-text-color);
+    font-size: 0.7em;
+    line-height: .8em;
+}
+.nav-icon{
+    padding-bottom: 8px;
+}
+.nav-img-txt {
+    text-align: center;
 }
 .logo-small{
     height: 48px;
     width: 48px;
 }
-
 
 #splash{
     min-height: calc(100vh - var(--nav-bar-height));
@@ -171,7 +233,7 @@ h2{
 }
 /*
     ::before displays the white indenting triangle. This is made up out of the corners of borders. background is used for the color.
-    border-top determines the height. Using a vw value makes sure the angle of the triangle is static.
+    border-top determines the height. Using a vw value makes sure the angle of the triangle is static if they height stays the same.
     border-left and right are the blue triangles. Using width 50vw for both ensures that they take up the full
     width of the screen. Height and margin-top fix a bug where there were white or blue lines showing at the top or bottom.
 */
@@ -200,9 +262,12 @@ h2{
 #our-approach{
     background-color: var(--our-approach-bg-color);
 }
+.arrow-down{
+    height: 36px;
+}
 
 #cost-transparency{
-    background-color: var(--cost-transparity-bg-color);
+    background-color: var(--cost-transparency-bg-color);
 }
 
 .cost-box-container{
@@ -211,7 +276,7 @@ h2{
     justify-content: space-evenly;
 }
 .cost-box{
-    background: var(--cost-transparity-scheme-bg-color);
+    background: var(--cost-transparency-scheme-bg-color);
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -219,7 +284,6 @@ h2{
     padding:  0 16px;
     margin-bottom: 16px;
     max-width: 400px;
-    /*flex-shrink: 1;*/
 }
 .cost-box>ul{
     padding-left: 16px;
@@ -230,7 +294,7 @@ h2{
     margin-bottom: 0;
     border-bottom: 6px;
     border-style: solid;
-    border-color: var(--cost-transparity-scheme-divider-color);
+    border-color: var(--cost-transparency-scheme-divider-color);
     text-align: center;
 }
 
@@ -271,76 +335,11 @@ h2{
 }
 
 
-/* general css */
-
-.section{
-    padding: 16px;
-    box-sizing: border-box;
-}
-
-.content-grid {
-    flex-direction: column;
-    border-radius: 20px;
-    background: var(--almost-white);
-    overflow: hidden;
-    padding-bottom: -20px;
-}
-.content-item-text{
-    display: flex;
-    flex-direction: column;
-    text-align: justify;
-    padding: 16px;
-    box-sizing: border-box;
-}
-.content-item-image-wrapper{
-    max-width: 100%;
-    flex-grow: 1;
-    box-sizing: border-box;
-    object-fit: contain;
-    align-items: center;
-    display: flex;
-    background: lightgray;
-    position: relative;
-}
-.content-item-image {
-    max-width: 100%;
-    flex-grow: 1;
-    object-fit: contain;
-
-    /*min-height: 100px;*/
-}
-
-.arrow-down{
-    height: 36px;
-}
-
-.text-center{
-    text-align: center;
-}
-
-
-html{
-    scroll-behavior:smooth
-}
-body{
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    overflow-x:hidden;
-
-}
-.flex-grow{
-    flex-grow: 1;
-}
-
 
 @media (orientation : landscape) {
     #splash {
         flex-direction: row-reverse;
         display: flex;
-    }
-    .quote-container {
-        justify-content: center;
     }
     .quote-area{
         display: block;
@@ -352,7 +351,6 @@ body{
     }
     .quote-area::before{
         content: '';
-
         border-top: 0 transparent;
         border-right: 0 transparent;
         border-left: 130px solid var(--ftr-blue);
@@ -361,7 +359,16 @@ body{
         background: white;
         margin-right: -5px;
     }
-
+    .quote-container {
+        justify-content: center;
+    }
+    /*Make the quote and text under a tad wider so that they cover the triangle*/
+    .quote-container>:nth-child(1) {
+        width: calc(100% + 8vh - 1vw);
+    }
+    .quote-container>:nth-child(2) {
+        width: calc(100% + .5vh - 1vw);
+    }
     /* Apply padding to all but the :before*/
     #logo-area:first-child {
         padding: 0;
@@ -380,30 +387,35 @@ body{
     }
 }
 
-
-
-
-
-
+@media (orientation: landscape) and (min-width: 768px){
+    .quote-area{
+        width: 60%
+    }
+    #logo-area {
+        width: 40%;
+    }
+}
 
 /* Desktop */
 @media (min-width: 768px) {
+    .desktop-only{
+        display: initial;
+    }
+    .mobile-only {
+        display: none;
+    }
 
-    /* Order so it is displayed at the bottom, but still keeping the accessibility as if it were at the top. */
+    .section{
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
     #header {
         order: 0;
-        position: sticky;
         top: 0;
-        background: var(--almost-white);
-        height: var(--nav-bar-height);
         box-shadow: var(--nav-bar-desktop-shadow);
     }
-    .nav-img-button::before{
-        content: attr(data-text);
-    }
     .nav-img-button{
-        text-decoration: none;
-        color: var(--nav-bar-text-color);
         font-size: 1.4em;
     }
     .nav-icon{
@@ -421,14 +433,7 @@ body{
     }
 
     .quote {
-        font-size: 2em;
-    }
-
-    .quote-area{
-        width: 60%
-    }
-    #logo-area {
-        width: 40%;
+        font-size: 3em;
     }
 
     .quote-text-under{
