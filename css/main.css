@@ -110,8 +110,6 @@ body{
     max-width: 100%;
     flex-grow: 1;
     object-fit: contain;
-
-    /*min-height: 100px;*/
 }
 
 .text-center{
@@ -122,10 +120,14 @@ body{
     flex-grow: 1;
 }
 
-
-
-
-
+.chip {
+    background: var(--contact-us-bg-color);
+    padding: 4px 8px;
+    text-align: center;
+    border-radius: 20px;
+    /*line-height: 2em;*/
+    margin: 4px;
+}
 
 
 /* Typography */
@@ -265,6 +267,11 @@ h2{
 .arrow-down{
     height: 36px;
 }
+.chips{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 
 #cost-transparency{
     background-color: var(--cost-transparency-bg-color);
@@ -281,7 +288,7 @@ h2{
     display: flex;
     flex-direction: column;
     text-align: justify;
-    padding:  0 16px;
+    padding: 0 16px 4px;
     margin-bottom: 16px;
     max-width: 400px;
 }
