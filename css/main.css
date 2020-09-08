@@ -322,9 +322,11 @@ h2{
 }
 
 .contact-row > a {
-    margin-left: 16px;
     text-decoration: none;
     color: currentColor;
+}
+.contact-row > img {
+    margin-right: 16px;
 }
 
 
