@@ -272,7 +272,7 @@ h2{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #1F2224;
+    background-color: #2C2D30;
     flex-grow: 1;
 }
 .background-video {
@@ -478,10 +478,6 @@ h2{
         flex-direction: row;
         justify-content: space-around;
     }
-    #moving-quote {
-        position: initial;
-        /*top: 20%;*/
-    }
 }
 
 @media (min-width: 1200px )  {
@@ -503,9 +499,6 @@ h2{
     }
     #what-we-do > .section {
         width: calc(60% - 125px);
-    }
-    .background-video-wrapper {
-
     }
     .background-video {
         width: 100%;
