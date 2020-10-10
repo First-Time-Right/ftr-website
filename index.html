@@ -64,13 +64,20 @@
 <section id="splash">
 
     <div id="logo-area">
-        <img class="logo-full" alt="logo"
-             srcset="img/ftr-logo-full_1x.webp 353w,
-                     img/ftr-logo-full.webp 504w"
-             sizes="(max-width: 353w) 353px,
-                    504px"
-             src="img/ftr-logo-full.webp"
-        >
+        <picture class="logo-full">
+            <source type="image/webp"
+                    srcset="img/ftr-logo-full_1x.webp 353w,
+                            img/ftr-logo-full.webp 504w"
+                    sizes="(max-width: 353w) 353px,
+                           504px">
+
+            <source type="image/png"
+                    srcset="img/ftr-logo-full_1x.png 353w,
+                            img/ftr-logo-full.png 504w"
+                    sizes="(max-width: 353w) 353px,
+                           504px">
+            <img alt="logo" src="img/ftr-logo-full.png">
+        </picture>
     </div>
 
     <div class="quote-area dark-bg">
@@ -112,6 +119,7 @@
 
     <div class="background-video-wrapper">
         <video loop muted
+               playsinline
                preload="none"
                class="background-video"
                id="what-we-do-video"
@@ -192,16 +200,24 @@
                 with all stakeholders and shareholders on the envisioned way forward.
             </p>
         </div>
-        <img class="content-item-image-wrapper"
-             srcset="img/new_mindset_2x.webp 360w,
-                     img/new_mindset_2x.webp 720w,
-                     img/new_mindset.webp 1000w"
-             sizes="(max-width: 360px) 360px,
-                    (max-width: 720px) 720px,
-                    1000px"
-             src="img/new_mindset.webp"
-             alt="New mindset, new results"
-        />
+        <picture class="content-item-image-wrapper">
+            <source type="image/webp"
+                    srcset="img/new_mindset_2x.webp 360w,
+                            img/new_mindset_2x.webp 720w,
+                            img/new_mindset.webp 1000w"
+                    sizes="(max-width: 360px) 360px,
+                            (max-width: 720px) 720px,
+                            1000px">
+
+            <source type="image/png"
+                    srcset="img/new_mindset_2x.jpg 360w,
+                            img/new_mindset_2x.jpg 720w,
+                            img/new_mindset.jpg 1000w"
+                    sizes="(max-width: 360px) 360px,
+                            (max-width: 720px) 720px,
+                            1000px">
+            <img src="img/new_mindset.jpg" alt="New mindset, new results"/>
+        </picture>
         <div class="content-item-text">
             <h2 class="text-center">Risk Mitigation</h2>
             <p>
@@ -230,18 +246,28 @@
                 <li><strong>Sanity Check Programme</strong> to secure agility of the organization</li>
             </ul>
         </div>
-        <img class="content-item-image-wrapper"
-             srcset="img/sleutel_succes_1x.webp 360w,
-                     img/sleutel_succes_2x.webp 720w,
-                     img/sleutel_succes_3x.webp 1080w,
-                     img/sleutel_succes_4x.webp 1440w"
-             sizes="(max-width: 360px) 360px,
-                    (max-width: 720px) 720px,
-                    (max-width: 1080px) 1080px,
-                    1440w"
-             src="img/sleutel_succes_3x.webp"
-             alt="Key to Success"
-        />
+        <picture class="content-item-image-wrapper">
+            <source type="image/webp"
+                    srcset="img/sleutel_succes_1x.webp 360w,
+                            img/sleutel_succes_2x.webp 720w,
+                            img/sleutel_succes_3x.webp 1080w,
+                            img/sleutel_succes_4x.webp 1440w"
+                    sizes="(max-width: 360px) 360px,
+                           (max-width: 720px) 720px,
+                           (max-width: 1080px) 1080px,
+                           1440w">
+
+            <source type="image/jpg"
+                    srcset="img/sleutel_succes_1x.jpg 360w,
+                            img/sleutel_succes_2x.jpg 720w,
+                            img/sleutel_succes_3x.jpg 1080w,
+                            img/sleutel_succes_4x.jpg 1440w"
+                    sizes="(max-width: 360px) 360px,
+                           (max-width: 720px) 720px,
+                           (max-width: 1080px) 1080px,
+                           1440w">
+            <img src="img/sleutel_succes_3x.jpg" alt="Key to Success"/>
+        </picture>
 
     </div>
 
@@ -326,7 +352,8 @@
 <section id="contact-us" class="section dark-bg">
     <h1>Contact us</h1>
     <div class="contact-container">
-        <span class="contact-row"><img src="img/call-24px.svg" alt=""/><a href="tel:+31 613 888 444">+0613 888 444</a></span>
+        <span class="contact-row"><img src="img/call-24px.svg" alt=""/><a
+                href="tel:+31 613 888 444">+0613 888 444</a></span>
         <span class="contact-row"><img src="img/email-24px.svg" alt=""/><a
                 href="mailto:connect@FTRTM.com">connect@FTRTM.com</a></span>
         <span class="contact-row"><img src="img/linkedin.svg" alt=""/><a href="#">LinkedIn</a></span>
